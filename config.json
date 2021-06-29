@@ -1,2 +1,14 @@
 {
+    "download":
+    {
+        "genome": "ftp://ftp.ensembl.org/pub/release-104/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz",
+        "gtf": "http://ftp.ensembl.org/pub/release-104/gtf/homo_sapiens/Homo_sapiens.GRCh38.104.gtf.gz "
+    },
+    
+    "path":
+    {
+        "genome": "data/references/genome.fa",
+        "gtf": "data/references/annotation.gtf"
+    }
+}
 	
