@@ -16,7 +16,10 @@ rule all:
     input:
         genome = config['path']['genome'],
         annotation = config['path']['gtf'],
+        
+        fastq_file_dir = expand("data/fastq/{id}", id = id_list),
 
-        fastq_file_R1 = expand("data/fastq/{id}_1.fastq", id = id_list),
-        fastq_file_R2 = expand("data/fastq/{id}_2.fastq", id = id_list)
+        # fastq_file_R1 = expand("data/fastq/{id}_1.fastq", id = id_list),
+        # fastq_file_R2 = expand("data/fastq/{id}_2.fastq", id = id_list)
+
     

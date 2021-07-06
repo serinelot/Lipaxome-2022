@@ -1,3 +1,6 @@
 data/*
 .snakemake/*
-fasterq.tmp.UN05FMSS009005.17380/*
+fasterq.tmp.UN05FMSS009005.24474
+SRR1603662_1.fastq
+SRR1603662_2.fastq
+SRR1603662.fastq
