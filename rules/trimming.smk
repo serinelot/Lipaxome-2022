@@ -1,8 +1,9 @@
 rule trimming:
     """ Trims the FASTQ files using Trimmomatic """
     input:
-        fq1 = "data/fastq/{id}/{id}_1.fastq",
-        fq2 = "data/fastq/{id}/{id}_2.fastq"
+        fq1 = rules.download_fastq.output.fastq_file_R1,
+        fq2 = rules.download_fastq.output.fastq_file_R2
+
     output:
         qc_fq1 = "data/trimmed/{id}_1.fastq.gz",
         qc_fq2 = "data/trimmed/{id}_2.fastq.gz",
@@ -17,13 +18,13 @@ rule trimming:
     threads:
         32
     conda:
-        "envs/trimmomatic.yml"
+        "../envs/trimmomatic.yml"
     shell:
         "trimmomatic PE "
         "-threads {threads} "
         "-phred33 "
         "{input.fq1} {input.fq2} "
-        "{output.fq1} {output.unpaired_fq1}  "
-        "{output.fq2} {output.unpaired_fq2} "
+        "{output.qc_fq1} {output.unpaired_fq1}  "
+        "{output.qc_fq2} {output.unpaired_fq2} "
         "{params.options} "
         "&> {log}"
