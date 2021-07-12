@@ -7,13 +7,14 @@ rule qc_trimm:
         trimm_unpaired_fq2 = rules.trimming.output.trimm_unpaired_fq2
     
     output:
-        qc_trimm_fq1_out = "data/qc/{id}_1_fastqc.html"
+        qc_trimm_fq1_out = "data/qc_trimmed/{id}_1_fastqc.html",
+        qc_trimm_fq2_out = "data/qc_trimmed/{id}_2_fastqc.html"
     
     params:
-        out_dir = "data/qc"
+        out_dir = "data/qc_trimmed"
     
     log:
-        "logs/fastqc/{id}.log"
+        "logs/fastqc_trimmed/{id}.log"
     
     threads:
         32
