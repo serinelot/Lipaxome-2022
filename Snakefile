@@ -8,12 +8,14 @@ include: "rules/trimming.smk"
 include: "rules/qc_trimm.smk"
 include: "rules/download_genome.smk"
 include: "rules/download_annotation.smk"
+include: "rules/star_index.smk"
+include: "rules/star_alignReads.smk"
 
 
 with open("SRR_id.txt") as f:
     id_list = f.read().splitlines()
 
-id_list = id_list[0:3]
+id_list = id_list[1:3]
 
 rule all:
     input:
@@ -30,4 +32,9 @@ rule all:
         qc_trimm_fq2_out = expand("data/qc_trimmed/{id}_2_fastqc.html", id = id_list),
 
         genome = config['path']['genome'],
-        annotation = config['path']['gtf']
+        annotation = config['path']['annotation'],
+
+        chrNameLength = config['path']['chrNameLength'],
+
+        bam = expand("results/STAR/{id}/Aligned.sortedByCoord.out.bam", id = id_list),
+        bam_logs = expand("results/STAR/{id}/Log.final.out", id = id_list)
