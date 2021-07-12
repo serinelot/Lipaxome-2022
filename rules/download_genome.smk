@@ -6,6 +6,6 @@ rule download_genome:
         link = config['download']['genome']
     shell:
         "wget -O {output.genome}.gz {params.link} && "
-        "gzip -d {output.genome}.gz "
+        "gzip -d {output.genome}.gz " 
 
 

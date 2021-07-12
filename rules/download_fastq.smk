@@ -13,4 +13,4 @@ rule download_fastq:
         "../envs/sra-tools.yml"
 
     shell:
-        "fasterq-dump --progress -O {params.output_directory} {params.srr_id}"
+        "fasterq-dump --progress -O {params.output_directory} {params.srr_id}" 

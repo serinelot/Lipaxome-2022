@@ -33,4 +33,4 @@ rule trimming:
         "{output.trimm_fq1} {output.trimm_unpaired_fq1}  "
         "{output.trimm_fq2} {output.trimm_unpaired_fq2} "
         "{params.options} "
-        "&> {log}"
+        "&> {log}" 

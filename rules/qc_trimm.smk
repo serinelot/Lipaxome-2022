@@ -28,4 +28,4 @@ rule qc_trimm:
         "--threads {threads} "
         "{input.trimm_fq1} {input.trimm_fq2} "
         "{input.trimm_unpaired_fq1} {input.trimm_unpaired_fq2} "
-        "&> {log}"
+        "&> {log}" 

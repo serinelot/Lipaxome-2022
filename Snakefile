@@ -19,10 +19,10 @@ rule all:
         fastq_file_R1 = expand("data/fastq/{id}_1.fastq", id = id_list),
         fastq_file_R2 = expand("data/fastq/{id}_2.fastq", id = id_list),
 
-        #trimm_unpaired_fq1 = expand("data/trimmed/{id}_1.unpaired.fastq.gz", id = id_list),
-        #trimm_unpaired_fq2 = expand("data/trimmed/{id}_2.unpaired.fastq.gz", id = id_list),
+        trimm_unpaired_fq1 = expand("data/trimmed/{id}_1.unpaired.fastq.gz", id = id_list),
+        trimm_unpaired_fq2 = expand("data/trimmed/{id}_2.unpaired.fastq.gz", id = id_list),
 
-        #qc_trimm_fq1_out = expand("data/qc/{id}_1_fastqc.html", id = id_list),
+        qc_trimm_fq1_out = expand("data/qc/{id}_1_fastqc.html", id = id_list),
 
         genome = config['path']['genome'],
         annotation = config['path']['gtf']

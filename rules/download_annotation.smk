@@ -6,6 +6,6 @@ rule download_annotation:
         link = config['download']['gtf']
     shell:
         "wget -O {output.annotation}.gz {params.link} && "
-        "gzip -d {output.annotation}.gz "
+        "gzip -d {output.annotation}.gz " 
 
 
