@@ -15,7 +15,7 @@ include: "rules/star_alignReads.smk"
 with open("SRR_id.txt") as f:
     id_list = f.read().splitlines()
 
-id_list = id_list[1:3]
+id_list = id_list[0:3]
 
 rule all:
     input:
