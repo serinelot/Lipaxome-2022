@@ -38,4 +38,10 @@
         "mem": "64G",
         "time": "0-3:00:00"
     }
+    ,"kallisto_index":
+    {
+        "cpus-per-task": "32",
+        "mem": "64G",
+        "time": "0-3:00:00"
+    }
 }

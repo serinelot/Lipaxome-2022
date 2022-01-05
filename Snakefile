@@ -10,7 +10,9 @@ include: "rules/download_genome.smk"
 include: "rules/download_annotation.smk"
 include: "rules/star_index.smk"
 include: "rules/star_alignReads.smk"
+include: "rules/kallisto_index.smk"
 
+#kal_index = "results/kallisto/transcripts.idx"
 
 with open("SRR_id.txt") as f:
     id_list = f.read().splitlines()
