@@ -10,7 +10,8 @@
         "genome": "data/references/genome.fa",
         "annotation": "data/references/annotation.gtf",
         "chrNameLength": "data/references/star_index/chrNameLength.txt",
-        "star_index" : "data/references/star_index/"
+        "star_index" : "data/references/star_index/",
+	"kallisto_index" : "data/references/kallisto_index/transcripts.idx"
     }
 } 
 	

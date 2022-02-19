@@ -35,13 +35,13 @@
     "star_alignReads":
     {
         "cpus-per-task": "40",
-        "mem": "75G",
+        "mem": "85G",
         "time": "0-3:00:00"
     }
     ,"kallisto_index":
     {
         "cpus-per-task": "32",
-        "mem": "64G",
+        "mem": "128G",
         "time": "0-3:00:00"
     }
 }

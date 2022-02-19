@@ -32,6 +32,6 @@ rule star_alignReads:
         "--outFilterMatchNminOverLread 0.3 "
         "--outFilterMultimapNmax 100 "
         "--winAnchorMultimapNmax 100 "
-	    "--limitBAMsortRAM 200000000000"
+	    "--limitBAMsortRAM 500000000000"
         "--alignEndsProtrude 5 ConcordantPair "
         "&> {log}"
