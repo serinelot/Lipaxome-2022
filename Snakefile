@@ -10,7 +10,7 @@ include: "rules/download_genome.smk"
 include: "rules/download_annotation.smk"
 include: "rules/star_index.smk"
 include: "rules/star_alignReads.smk"
-include: "rules/kallisto_index.smk"
+include: "rules/feature_counts.smk"
 
 
 with open("SRR_id.txt") as f:
@@ -39,5 +39,5 @@ rule all:
 
 	bam = expand("results/STAR/{id}/Aligned.sortedByCoord.out.bam", id = id_list),
     	bam_logs = expand("results/STAR/{id}/Log.final.out", id = id_list),
-	
-	kal_index = config['path']['kallisto_index']
+
+        counts = expand("results/featureCounts/{id}_gene_counts.tsv", id = id_list)

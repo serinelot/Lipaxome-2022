@@ -1,12 +1,9 @@
 rule feature_counts:
     input:
         bam = rules.star_alignReads.output.bam, 
-        gtf = "data/references/annotation.gtf"
+        gtf = rules.download_annotation.output.annotation
     output:
-        counts = "results/featureCounts/{id}/gene_counts.txt",
-        mini_count = "results/featureCounts/{id}/gene_mini_counts.txt"
-    params:
-        out_dir = "data/featureCounts{id}/"
+        counts = "results/featureCounts/{id}_gene_counts.tsv"
     log:
         "logs/featureCounts/{id}.log"
     threads:
@@ -14,6 +11,14 @@ rule feature_counts:
     conda:
         "../envs/featureCounts.yml"
     shell:
-        "featureCounts -T {threads} -t exon -g gene_id -a {input.gtf} -o {output} {input.bam}"
-        " 2> {log}"
-        "-O {params.out_dir}"
+        "featureCounts "
+        "-a {input.gtf} "
+        "-g gene_id "
+        "-M " 
+        "-o {output.counts} "
+        "-p "
+        "-s 1 "
+        "-T {threads} "
+        "-t exon "
+        "{input.bam} "
+        " 2> {log} "

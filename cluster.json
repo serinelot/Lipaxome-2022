@@ -17,13 +17,13 @@
     "qc":
     {
         "cpus-per-task": "16",
-	    "mem": "8G",
+	"mem": "8G",
         "time": "0-2:30:00"
     },
     "qc_trimm":
     {
         "cpus-per-task": "16",
-	    "mem": "8G",
+	"mem": "8G",
         "time": "0-2:30:00"
     },
     "star_index":
@@ -37,11 +37,11 @@
         "cpus-per-task": "40",
         "mem": "85G",
         "time": "0-3:00:00"
-    }
-    ,"kallisto_index":
+    },
+    "feature_counts":
     {
-        "cpus-per-task": "32",
-        "mem": "128G",
-        "time": "0-3:00:00"
+        "cpus-per-task": "16",
+        "mem": "8G",
+        "time": "0-0:30:00"
     }
 }
