@@ -19,6 +19,4 @@ rule feature_counts:
         "-p "
         "-s 1 "
         "-T {threads} "
-        "-t exon "
         "{input.bam} "
-        " 2> {log} "
