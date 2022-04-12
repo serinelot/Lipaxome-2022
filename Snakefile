@@ -16,7 +16,7 @@ include: "rules/feature_counts.smk"
 with open("SRR_id.txt") as f:
     id_list = f.read().splitlines()
 
-id_list = id_list[0:3]
+id_list = id_list[0:12]
 
 rule all:
     input:
@@ -37,7 +37,7 @@ rule all:
 
         chrNameLength = config['path']['chrNameLength'],
 
-	bam = expand("results/STAR/{id}/Aligned.sortedByCoord.out.bam", id = id_list),
-    	bam_logs = expand("results/STAR/{id}/Log.final.out", id = id_list),
+        bam = expand("results/STAR/{id}/Aligned.sortedByCoord.out.bam", id = id_list),
+        bam_logs = expand("results/STAR/{id}/Log.final.out", id = id_list),
 
         counts = expand("results/featureCounts/{id}_gene_counts.tsv", id = id_list)

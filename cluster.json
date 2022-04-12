@@ -9,39 +9,47 @@
         "mail-user": "Serine.Benachenhou@USherbrooke.ca",
         "mail-type": "FAIL"
     },
+    "download_fastq":
+    {
+        "cpus-per-task": "1",
+        "mem": "16G",
+        "time": "0-4:00:00"
+    },
+
     "trimming":
     {
-        "cpus-per-task": "4",
-        "time": "0-4:00:00"
+        "cpus-per-task": "3",
+        "mem": "1G",
+        "time": "0-1:00:00"
     },
     "qc":
     {
-        "cpus-per-task": "16",
-	"mem": "8G",
-        "time": "0-2:30:00"
+        "cpus-per-task": "3",
+        "mem": "4G",
+        "time": "0-0:45:00"
     },
     "qc_trimm":
     {
-        "cpus-per-task": "16",
-	"mem": "8G",
-        "time": "0-2:30:00"
+        "cpus-per-task": "3",
+        "mem": "4G",
+        "time": "0-0:45:00"
     },
     "star_index":
     {
         "cpus-per-task": "32",
-        "mem": "64G",
-        "time": "0-5:00:00"
+        "mem": "40G",
+        "time": "0-1:00:00"
     },
     "star_alignReads":
     {
-        "cpus-per-task": "40",
-        "mem": "85G",
-        "time": "0-3:00:00"
+        "cpus-per-task": "10",
+        "mem": "100G",
+        "time": "0-1:00:00"
     },
     "feature_counts":
     {
-        "cpus-per-task": "16",
-        "mem": "8G",
+        "cpus-per-task": "2",
+        "mem": "4G",
         "time": "0-0:30:00"
     }
 }
