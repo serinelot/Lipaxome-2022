@@ -1,4 +1,4 @@
-file_quantif <- snakemake@input[["file_quantif"]]
+file_quantif = list.files("/home/serine/projects/Lipaxome-2022/results/featureCounts", pattern = ".tsv$")
 
 data_merge <- list()
 
@@ -22,6 +22,3 @@ for (i in (1:length(file_quantif))) {
 data_merge <- Reduce(x = data_merge, f = function(x,y) {
   merge(x,y, by = "Geneid", sort = F)
 })
-
-write.table(
-  snakemkake@output[["merged_counts"]]) 

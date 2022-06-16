@@ -1,10 +1,10 @@
 rule merge_quantification:
     input:
-        counts = expand("results/featureCounts/{id}_gene_counts.tsv", id = id_list)
+        file_quantif = expand("results/featureCounts/{id}_gene_counts.tsv", id = id_list)
     output:
-        merged_counts = "data/"
+        merged_counts = "results/merge_quantification/merge_quant_file.csv"
     conda:
-        "../envs/r.yml"
+        "../envs/R.yml"
     script:
         "../scripts/merge_quant_file.R"
         
